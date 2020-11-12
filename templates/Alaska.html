@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripadvisor reviews across Alaska</title>
+    <style>
+
+.project-title {
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 80px;
+  color: aquamarine;
+  text-align: left;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto 1400px auto;
+  grid-template-rows: 100px auto;
+}
+
+.top {
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.bottom {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+.top.left {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.top.center {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.top.right {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+#maps {
+  margin-top: 50px;
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  }
+
+#maps img {
+  position: absolute;
+}
+
+@keyframes animate_one {
+  0% {
+  opacity:1;
+}
+45% {
+opacity:1;
+}
+55% {
+opacity:0;
+}
+100% {
+opacity:0;
+}
+}
+
+#maps img.one {
+  animation-name: animate_one;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+}
+
+@keyframes animate_two {
+  0% {
+  opacity: 0;
+}
+45% {
+opacity: 0;
+}
+55% {
+opacity: 1;
+}
+100% {
+opacity: 1;
+}
+}
+
+#maps img.two {
+  animation-name: animate_two;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+}
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h2 class="project-title top center">TRIPADVISOR REVIEWS <br/>ACROSS ALASKA</h2>
+      </div>
+    </header>
+    <div class="grid" id="maps">
+      <img class="two bottom" media=all alt="Map 1" src="{{ map_1 }}" />
+      <img class="one bottom" media=all alt="Map 1" src="{{ map_2 }}" />
+    </div>
+  </body>
+</html>
