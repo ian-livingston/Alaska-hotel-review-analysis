@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tripadvisor reviews across Alaska</title>
+    <style>
+
+body {
+  font-family: Helvetica;
+  color: #94a6d1;
+}
+
+.project-title {
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 80px;
+  color: #94a6d1;
+  text-align: left;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: black;
+  font-family: Helvetica;
+  border: none;
+  color: #94a6d1;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.3s;
+  cursor: pointer;
+  margin: 50px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto 1400px auto;
+  grid-template-rows: 100px auto;
+}
+
+.top {
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.bottom {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+.top.left {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.top.center {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.top.right {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+#maps {
+  margin-top: 50px;
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  }
+
+#maps img {
+  position: absolute;
+}
+
+@keyframes animate_one {
+  5% {
+  opacity:1;
+}
+25% {
+opacity:1;
+}
+30% {opacity:0;
+}
+50% {opacity:0;
+}
+55% {
+opacity:0;
+}
+75% {
+opacity:0;
+}
+80% {
+opacity:0;
+}
+100% {
+opacity:0;
+}
+}
+
+#maps img.one {
+  animation-name: animate_one;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
+
+@keyframes animate_two {
+  5% {
+  opacity:0;
+}
+25% {
+opacity:0;
+}
+30% {opacity:1;
+}
+50% {opacity:1;
+}
+55% {
+opacity:0;
+}
+75% {
+opacity:0;
+}
+80% {
+opacity:0;
+}
+100% {
+opacity:0;
+}
+}
+
+#maps img.two {
+  animation-name: animate_two;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
+
+@keyframes animate_three {
+  5% {
+  opacity:0;
+}
+25% {
+opacity:0;
+}
+30% {opacity:0;
+}
+50% {opacity:0;
+}
+55% {
+opacity:1;
+}
+75% {
+opacity:1;
+}
+80% {
+opacity:0;
+}
+100% {
+opacity:0;
+}
+}
+
+#maps img.three {
+  animation-name: animate_three;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
+
+@keyframes animate_four {
+  5% {
+  opacity:0;
+}
+25% {
+opacity:0;
+}
+30% {opacity:0;
+}
+50% {opacity:0;
+}
+55% {
+opacity:1;
+}
+75% {
+opacity:1;
+}
+80% {
+opacity:0;
+}
+100% {
+opacity:0;
+}
+}
+
+#maps img.three {
+  animation-name: animate_four;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
+
+    </style>
+  </head>
+  <body style="background-color:#f2f2f2;">
+    <header>
+      <div>
+        <h2 class="project-title top left">ALASKA HOTEL + PROPERTY <br/>REVIEW FILTER</h2>
+      </div>
+    </header>
+    <div class="grid top-center">
+      <img id="circle" media=all alt="circle" src="{{ circle }}" />
+      <form action="/reviews" method="POST">
+        <label class="drop-down-label" for="topic">PICK A TOPIC</label>
+        <br/>
+        <input list="topic-form" name="topic-form" id="topic">
+        <datalist class="drop-down" id="topic-form">
+          <option value="Topic 1 p(y|x)">Arrival</option>
+          <option value="Topic 2 p(y|x)">Room</option>
+          <option value="Topic 3 p(y|x)">Atmosphere</option>
+          <option value="Topic 4 p(y|x)">Surrounding area</option>
+          <option value="Topic 5 p(y|x)">Annoyances/quirks</option>
+          <option value="Topic 6 p(y|x)">Food</option>
+          <option value="Topic 7 p(y|x)">Breakfast</option>
+          <option value="Topic 8 p(y|x)">Check-in/check-out</option>
+          <option value="Topic 9 p(y|x)">Touring Alaska</option>
+          <option value="Topic 10 p(y|x)">Local scenery</option>
+          <option value="Topic 11 p(y|x)">Fishing</option>
+          <option value="Topic 1 p(y|x)" selected="selected">Arrival</option>
+        </datalist>
+        <br/>  
+        <input style="position:relative; text-align:center;" class="button" type="submit" value="GET REVIEW">
+      </div>
+      </form>      
+    </div>
+  </body>
+</html>
